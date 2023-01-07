@@ -1,0 +1,10 @@
+initialise: movlw	7
+	    movwf	1fh	;cmcon = 7,disable comp
+	    bsf	3,5	;go to bank1
+	    bcf	5,0	;RA0 = output
+            bcf	3,5	;go to bank0
+Main: bsf	5,0	;led1 on
+      call        Wait
+      bcf        5,1        ;led2 off
+      call        Wait
+      end
